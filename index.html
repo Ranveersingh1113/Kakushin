@@ -19,7 +19,7 @@
     .subtitle { color:#94a3b8; font-size:0.875rem; margin-left:1.75rem; }
     .diagram-container { background:rgba(15,23,42,0.5); border-radius:1rem; border:1px solid #1e293b; padding:1.5rem; overflow-x:auto; }
     svg { width:100%; min-width:1050px; display:block; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; margin-top:2rem; }
+    .cards { display:grid; grid-template-columns:1fr; gap:1rem; margin-top:2rem; }
     .card { background:rgba(15,23,42,0.5); border-radius:0.75rem; border:1px solid #1e293b; padding:1.25rem; }
     .card-header { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem; }
     .card-dot { width:8px; height:8px; border-radius:50%; }
@@ -51,9 +51,9 @@
         <h1>ArthSaathi Architecture</h1>
         <div class="toolbar">
           <div class="toolbar-actions">
-            <button onclick="copyAsImage(this)">📋 Copy</button>
-            <button onclick="downloadPNG(this)">🖼️ PNG</button>
-            <button onclick="downloadPDF(this)">📄 PDF</button>
+            <button onclick="copyAsImage(this)">Copy</button>
+            <button onclick="downloadPNG(this)">PNG</button>
+            <button onclick="downloadPDF(this)">PDF</button>
           </div>
           <button class="toolbar-toggle" onclick="this.parentElement.classList.toggle('expanded')" title="Export options" aria-label="Export options">⋯</button>
         </div>
@@ -420,51 +420,22 @@
       </svg>
     </div>
 
-    <!-- Info Cards -->
+    <!-- Diagram explanation -->
     <div class="cards">
       <div class="card">
         <div class="card-header">
-          <div class="card-dot rose"></div>
-          <h3>The Winning Wedge — Rakshak</h3>
+          <div class="card-dot cyan"></div>
+          <h3>Diagram Brief</h3>
         </div>
         <ul>
-          <li>• Proactive fraud &amp; mis-selling guardian</li>
-          <li>• Scam interception on WhatsApp forwards</li>
-          <li>• ULIP-as-FD mis-selling detection</li>
-          <li>• Predatory loan-app true-APR scanner</li>
-          <li>• Routes reports to Sachet / cybercrime</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot orange"></div>
-          <h3>Eval-First Pipeline</h3>
-        </div>
-        <ul>
-          <li>• Golden test set built before any component</li>
-          <li>• 5 retrieval gates: hybrid · reranker · HyDE · agentic · e2e</li>
-          <li>• Chunking: 3–4 strategies benchmarked</li>
-          <li>• Embedding: per-language Indic quality tested</li>
-          <li>• No component ships without its gate clearing</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-dot emerald"></div>
-          <h3>One Adaptive Engine</h3>
-        </div>
-        <ul>
-          <li>• One core serves all personas at runtime</li>
-          <li>• 4 axes: income · language · literacy · ability</li>
-          <li>• Adaptation at query time, not index-time tags</li>
-          <li>• 22 languages via Bhashini + Sarvam + AI4Bharat</li>
-          <li>• Education only — SEBI-compliant by design</li>
+          <li>• User channels feed into Saathi, a LangGraph orchestrator that detects intent, language, literacy, and accessibility needs.</li>
+          <li>• Saathi routes each request to specialist agents for education, fraud protection, scheme guidance, cash-flow learning, accessibility, and nudges.</li>
+          <li>• The knowledge layer combines offline ingestion, hybrid retrieval, reranking, cited generation, scheme graph lookup, and multilingual voice services.</li>
+          <li>• Guardrails enforce education-not-advice, grounded citations, PII redaction, safe refusal, and human escalation where confidence or risk requires it.</li>
+          <li>• The evaluation harness validates chunking, embeddings, retrieval, generation, routing, and agent behavior before demo or deployment.</li>
         </ul>
       </div>
     </div>
-
     <p class="footer">
       ArthSaathi · Kakushin 2026 by NOMURA · Financial Literacy &amp; Agentic AI · Multi-agent Financial Guardian
     </p>
@@ -485,7 +456,7 @@
       setTimeout(()=>btn.textContent=orig,2000);
     }
     async function downloadPNG(btn) {
-      const orig = btn.textContent; btn.textContent='⏳ ...';
+      const orig = btn.textContent; btn.textContent='… ...';
       try {
         const el = document.getElementById('report-container');
         const r = el.getBoundingClientRect();
@@ -500,7 +471,7 @@
       setTimeout(()=>btn.textContent=orig,2000);
     }
     async function downloadPDF(btn) {
-      const orig = btn.textContent; btn.textContent='⏳ ...';
+      const orig = btn.textContent; btn.textContent='… ...';
       try {
         const el = document.getElementById('report-container');
         const r = el.getBoundingClientRect();
